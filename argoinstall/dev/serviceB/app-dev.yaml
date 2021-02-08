@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: marketing
+  name: serviceB
   namespace: argocd
 spec:
   project: marketing-dev
