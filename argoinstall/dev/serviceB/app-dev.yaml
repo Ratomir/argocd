@@ -4,15 +4,15 @@ metadata:
   name: marketing
   namespace: argocd
 spec:
-  project: marketing-prod
+  project: marketing-dev
   source:
-    repoURL: https://github.com/ratomirvu/argocd.git
+    repoURL: https://github.com/Ratomir/argocd.git
     targetRevision: HEAD
     path: argoapps/serviceB
     directory:
       recurse: true
   destination:
-    server: argocd-prod
+    server: argocd-dev
     namespace: default
   syncPolicy:
     automated:

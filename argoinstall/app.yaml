@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: marketing
+  name: marketing-dev
   namespace: argocd
 spec:
   project: marketing-dev
   source:
-    repoURL: https://github.com/ratomirvu/argocd.git
+    repoURL: https://github.com/Ratomir/argocd.git
     targetRevision: HEAD
-    path: argoinstall
+    path: argoinstall/dev
     directory:
       recurse: true
   destination:
@@ -22,14 +22,14 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: marketing
+  name: marketing-prod
   namespace: argocd
 spec:
   project: marketing-prod
   source:
-    repoURL: https://github.com/ratomirvu/argocd.git
+    repoURL: https://github.com/Ratomir/argocd.git
     targetRevision: HEAD
-    path: argoinstall
+    path: argoinstall/prod
     directory:
       recurse: true
   destination:
