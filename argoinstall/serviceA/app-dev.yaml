@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: serviceA
+  namespace: argocd
+spec:
+  project: marketing-dev
+  source:
+    repoURL: https://github.com/ratomirvu/argocd.git
+    targetRevision: HEAD
+    path: argoapps/serviceA
+    directory:
+      recurse: true
+  destination:
+    server: argocd-dev
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
